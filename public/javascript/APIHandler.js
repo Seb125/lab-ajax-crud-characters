@@ -18,28 +18,26 @@ class APIHandler {
     }
   }
 
-  getOneRegister (id) {
-    const getSingleCharacter = async () => {
+  async getOneRegister (id) {
+    
 
       try {
     
       const response = await axios.get(`${this.BASE_URL}/characters/${id}`);
-      console.log(response)
+      return response.data
       } catch (error) {
         console.log(error)
       }
   
       }
   
-      getSingleCharacter();
-
-  }
+  
 
  
 
-  updateOneRegister (id, data) {
+  async updateOneRegister (id, data) {
 
-    const updateCharacter = async () => {
+    
 
       try {
     
@@ -50,28 +48,28 @@ class APIHandler {
         console.log(error)
       }
   
-      }
+      
   
-      updateCharacter();
+     
 
   }
 
-  createOneRegister (data) {
-    const createCharacter = async () => {
+  async createOneRegister (data) {
+   
 
       try {
     
       const response = await axios.post(`${this.BASE_URL}/characters`, data);
       console.log(response)
+      
       } catch (error) {
 
       
         console.log(error)
       }
   
-      }
+      
   
-      createCharacter();
   }
 
   deleteOneRegister (id) {
